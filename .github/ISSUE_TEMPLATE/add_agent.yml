@@ -1,0 +1,35 @@
+name: Add Agent Adapter
+description: Submit a new agent adapter for inclusion
+labels: ["new-agent", "community"]
+body:
+  - type: input
+    id: agent-name
+    attributes:
+      label: Agent name
+      placeholder: "BrowserBase"
+    validations:
+      required: true
+  - type: input
+    id: agent-url
+    attributes:
+      label: Agent website/repo
+      placeholder: "https://browserbase.com"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Brief description
+      description: What does this agent do? How does it approach web automation?
+    validations:
+      required: true
+  - type: dropdown
+    id: adapter-status
+    attributes:
+      label: Adapter status
+      options:
+        - "I've written the adapter and will submit a PR"
+        - "I'd like help writing the adapter"
+        - "Requesting someone else write it"
+    validations:
+      required: true

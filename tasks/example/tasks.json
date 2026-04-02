@@ -1,0 +1,37 @@
+[
+  {
+    "id": "ex-001",
+    "url": "https://shop.example.com/products",
+    "objective": "Search for 'wireless headphones' and add the cheapest option to cart",
+    "evaluation_criteria": "Cart contains one wireless headphone product with the lowest price",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ex-002",
+    "url": "https://shop.example.com/account",
+    "objective": "Update the shipping address to 123 Main St, Springfield, IL 62704",
+    "evaluation_criteria": "Account profile shows the updated shipping address with correct city, state, and zip code",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ex-003",
+    "url": "https://forum.example.com",
+    "objective": "Create a new thread in the 'General Discussion' forum with title 'Monthly Meetup' and body describing a Saturday event at 3pm",
+    "evaluation_criteria": "A new thread exists in General Discussion with the specified title and body mentioning Saturday 3pm",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ex-004",
+    "url": "https://dashboard.example.com/analytics",
+    "objective": "Export the monthly revenue report for March 2025 as a CSV file",
+    "evaluation_criteria": "A CSV file is downloaded containing revenue data with columns for date, amount, and category for March 2025",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ex-005",
+    "url": "https://dashboard.example.com/settings/integrations",
+    "objective": "Configure the Slack integration: connect to workspace 'acme-corp', select channel '#engineering', and enable notifications for deployment events only",
+    "evaluation_criteria": "Slack integration is active with acme-corp workspace, #engineering channel selected, and only deployment event notifications enabled",
+    "difficulty": "hard"
+  }
+]
