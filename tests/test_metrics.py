@@ -69,8 +69,22 @@ def test_compute_metrics_all_blocked() -> None:
 def test_determinism_perfect() -> None:
     """Determinism score is 1.0 when all runs agree."""
     run = [
-        TaskResult(task_id="d1", success=True, steps=[], duration_ms=0, cost_usd=0, blocked=False),
-        TaskResult(task_id="d2", success=False, steps=[], duration_ms=0, cost_usd=0, blocked=False),
+        TaskResult(
+            task_id="d1",
+            success=True,
+            steps=[],
+            duration_ms=0,
+            cost_usd=0,
+            blocked=False,
+        ),
+        TaskResult(
+            task_id="d2",
+            success=False,
+            steps=[],
+            duration_ms=0,
+            cost_usd=0,
+            blocked=False,
+        ),
     ]
     m = compute_metrics(run, repeat_runs=[run, run])
     assert m["determinism_score"] == 1.0
@@ -79,12 +93,40 @@ def test_determinism_perfect() -> None:
 def test_determinism_partial() -> None:
     """Determinism score reflects disagreements across runs."""
     run_a = [
-        TaskResult(task_id="d1", success=True, steps=[], duration_ms=0, cost_usd=0, blocked=False),
-        TaskResult(task_id="d2", success=True, steps=[], duration_ms=0, cost_usd=0, blocked=False),
+        TaskResult(
+            task_id="d1",
+            success=True,
+            steps=[],
+            duration_ms=0,
+            cost_usd=0,
+            blocked=False,
+        ),
+        TaskResult(
+            task_id="d2",
+            success=True,
+            steps=[],
+            duration_ms=0,
+            cost_usd=0,
+            blocked=False,
+        ),
     ]
     run_b = [
-        TaskResult(task_id="d1", success=True, steps=[], duration_ms=0, cost_usd=0, blocked=False),
-        TaskResult(task_id="d2", success=False, steps=[], duration_ms=0, cost_usd=0, blocked=False),
+        TaskResult(
+            task_id="d1",
+            success=True,
+            steps=[],
+            duration_ms=0,
+            cost_usd=0,
+            blocked=False,
+        ),
+        TaskResult(
+            task_id="d2",
+            success=False,
+            steps=[],
+            duration_ms=0,
+            cost_usd=0,
+            blocked=False,
+        ),
     ]
     m = compute_metrics(run_a, repeat_runs=[run_a, run_b])
     # d1 agrees (True, True), d2 disagrees (True, False) => 0.5

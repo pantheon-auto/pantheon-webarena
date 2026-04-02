@@ -47,12 +47,18 @@ def test_cli_run_example(tmp_path: Path) -> None:
         cli,
         [
             "run",
-            "--agent", "example",
-            "--suite", "example",
-            "--tasks", "3",
-            "--output", output,
-            "--tasks-dir", tasks_dir,
-            "--seed", "42",
+            "--agent",
+            "example",
+            "--suite",
+            "example",
+            "--tasks",
+            "3",
+            "--output",
+            output,
+            "--tasks-dir",
+            tasks_dir,
+            "--seed",
+            "42",
         ],
     )
     assert result.exit_code == 0, result.output
@@ -71,9 +77,12 @@ def test_cli_run_unknown_agent() -> None:
         cli,
         [
             "run",
-            "--agent", "nonexistent",
-            "--suite", "example",
-            "--tasks-dir", tasks_dir,
+            "--agent",
+            "nonexistent",
+            "--suite",
+            "example",
+            "--tasks-dir",
+            tasks_dir,
         ],
     )
     assert result.exit_code != 0
@@ -87,9 +96,12 @@ def test_cli_run_unknown_suite() -> None:
         cli,
         [
             "run",
-            "--agent", "example",
-            "--suite", "nonexistent",
-            "--tasks-dir", tasks_dir,
+            "--agent",
+            "example",
+            "--suite",
+            "nonexistent",
+            "--tasks-dir",
+            tasks_dir,
         ],
     )
     assert result.exit_code != 0

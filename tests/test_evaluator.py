@@ -95,8 +95,22 @@ def test_validate_steps_coerced_to_list() -> None:
 def test_validate_batch() -> None:
     """validate_batch processes multiple raw dicts."""
     raws = [
-        {"task_id": "b1", "success": True, "steps": [], "duration_ms": 1, "cost_usd": 0, "blocked": False},
-        {"task_id": "b2", "success": False, "steps": ["x"], "duration_ms": 2, "cost_usd": 0, "blocked": True},
+        {
+            "task_id": "b1",
+            "success": True,
+            "steps": [],
+            "duration_ms": 1,
+            "cost_usd": 0,
+            "blocked": False,
+        },
+        {
+            "task_id": "b2",
+            "success": False,
+            "steps": ["x"],
+            "duration_ms": 2,
+            "cost_usd": 0,
+            "blocked": True,
+        },
     ]
     results = ResultEvaluator.validate_batch(raws)
     assert len(results) == 2

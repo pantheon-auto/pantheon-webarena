@@ -43,7 +43,7 @@ class Reporter:
         timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
         lines: list[str] = [
-            f"# Benchmark Report",
+            "# Benchmark Report",
             "",
             f"**Agent:** {agent.get('name', 'unknown')} v{agent.get('version', '?')}",
             f"**Date:** {timestamp}",
@@ -150,9 +150,7 @@ class Reporter:
                 delta_s = f"{'+' if delta >= 0 else ''}{delta}{suffix}"
             except (TypeError, ValueError):
                 delta_s = "N/A"
-            lines.append(
-                f"| {label} | {va}{suffix} | {vb}{suffix} | {delta_s} |"
-            )
+            lines.append(f"| {label} | {va}{suffix} | {vb}{suffix} | {delta_s} |")
 
         lines.append("")
         Path(output).parent.mkdir(parents=True, exist_ok=True)

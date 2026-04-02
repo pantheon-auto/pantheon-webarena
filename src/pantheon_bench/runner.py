@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Any
 
@@ -118,13 +117,8 @@ class BenchmarkRunner:
         ) as progress:
             bar = progress.add_task("Tasks", total=len(self.tasks))
 
-            with ThreadPoolExecutor(
-                max_workers=self.concurrency
-            ) as executor:
-                futures = {
-                    executor.submit(self._execute_one, t): t
-                    for t in self.tasks
-                }
+            with ThreadPoolExecutor(max_workers=self.concurrency) as executor:
+                futures = {executor.submit(self._execute_one, t): t for t in self.tasks}
                 for future in as_completed(futures):
                     result, warnings = future.result()
                     self._results.append(result)

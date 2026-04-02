@@ -31,9 +31,7 @@ class ManualAdapter(AgentAdapter):
         if self._results_file is None:
             return
         if not self._results_file.exists():
-            raise FileNotFoundError(
-                f"Results file not found: {self._results_file}"
-            )
+            raise FileNotFoundError(f"Results file not found: {self._results_file}")
         with open(self._results_file, "r") as fh:
             records = json.load(fh)
         if not isinstance(records, list):

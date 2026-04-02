@@ -45,9 +45,7 @@ def get_adapter(name: str, **kwargs: object) -> "AgentAdapter":
     registry = _get_registry()
     if name not in registry:
         available = ", ".join(sorted(registry.keys()))
-        raise KeyError(
-            f"Unknown adapter '{name}'. Available adapters: {available}"
-        )
+        raise KeyError(f"Unknown adapter '{name}'. Available adapters: {available}")
     return registry[name](**kwargs)
 
 

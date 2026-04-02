@@ -7,7 +7,7 @@ import random
 from pathlib import Path
 from typing import Literal
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict
 
 
 class Task(BaseModel):
@@ -51,9 +51,7 @@ class TaskLoader:
         """
         if not self.base_dir.exists():
             return []
-        return sorted(
-            d.name for d in self.base_dir.iterdir() if d.is_dir()
-        )
+        return sorted(d.name for d in self.base_dir.iterdir() if d.is_dir())
 
     def load_suite(
         self,

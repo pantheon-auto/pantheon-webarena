@@ -109,7 +109,5 @@ def _compute_determinism(runs: list[list[TaskResult]]) -> float:
     if not outcomes:
         return 1.0
 
-    consistent = sum(
-        1 for ov in outcomes.values() if len(set(ov)) == 1
-    )
+    consistent = sum(1 for ov in outcomes.values() if len(set(ov)) == 1)
     return consistent / len(outcomes)
