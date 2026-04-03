@@ -203,9 +203,9 @@ pantheon-webarena/
 
 ---
 
-## Built by Pantheon AI
+## Built by [Pantheon AI](https://pantheonai.co.uk)
 
-We're a small team building web agents. We score 81% on WebArena as of early 2026, which we believe is competitive but not the point. The point is that every team claiming a number on web agent benchmarks should be able to prove it under identical conditions, and anyone should be able to verify those claims independently.
+[Pantheon AI](https://pantheonai.co.uk) builds deterministic web agents that run on small, locally-hosted models. We score 81% on WebArena as of early 2026, which we believe is competitive but not the point. The point is that every team claiming a number on web agent benchmarks should be able to prove it under identical conditions, and anyone should be able to verify those claims independently.
 
 pantheon-webarena is our attempt to make that possible. We use it internally for every release, and we're open-sourcing it because fragmented benchmarks help no one.
 
